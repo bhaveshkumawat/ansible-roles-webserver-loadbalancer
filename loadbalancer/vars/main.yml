@@ -1,0 +1,5 @@
+---
+# vars file for loadbalancer
+
+ portno: 8123
+ bportno: 8080

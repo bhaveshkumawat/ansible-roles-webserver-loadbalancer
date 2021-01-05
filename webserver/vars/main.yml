@@ -1,0 +1,4 @@
+---
+# vars file for webserver
+ portno: 8123
+ dir: "/var/www/bhavesh"

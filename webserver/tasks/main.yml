@@ -1,0 +1,23 @@
+---
+# tasks file for webserver
+          - name: install httpd package
+            package:  
+                name: "httpd"
+                state: present
+          - name: document root dir
+            file:
+                path: "{{ dir }}"
+                state: directory
+                
+            register: x
+         
+          - name: copying contents
+            template: 
+                src: "index.html.j2"
+                dest: "{{ dir }}/index.html" 
+          - name: configure web server
+            template: 
+                src: "local.conf.j2"
+                dest: "/etc/httpd/conf.d/bhavesh.conf"
+            notify: service of httpd
+  
